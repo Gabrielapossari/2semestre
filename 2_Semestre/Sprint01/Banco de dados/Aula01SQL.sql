@@ -20,3 +20,38 @@ CREATE TABLE Livros (
 SELECT * FROM Autores;   --visualizar a tabela 
 SELECT * FROM Generos;
 SELECT * FROM Livros;
+
+INSERT INTO Autores (NomeAutor)
+VALUES ('Gabriela'),
+('Julia'),
+('Isabella'),
+('gabriela'),
+('Julia');
+
+INSERT INTO Generos (Nome)
+VALUES ('Ficcao'),
+('Terror'),
+('Comedia'),
+('Infantil'),
+('Mitologia');
+
+ALTER TABLE Livros
+DROP COLUMN Musica;
+
+INSERT INTO Livros (Titulo,IdGenero,IdAutor)
+VALUES ('livro1', 1 , 1 ),
+('livro2',2 ,2 ),
+('livro3',3, 3 ),
+('livro4',4,4),
+('livro5',5,5);
+
+UPDATE Generos
+SET Nome = 'Biografia'
+WHERE IdGenero =3;
+
+UPDATE Livros
+SET IdGenero = 4
+WHERE IdGenero = 2;
+
+DELETE FROM Livros
+WHERE IdAutor = 1;
