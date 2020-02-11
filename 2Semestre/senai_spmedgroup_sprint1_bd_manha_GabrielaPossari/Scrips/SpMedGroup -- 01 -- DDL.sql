@@ -1,0 +1,63 @@
+CREATE DATABASE SpMedManha_;
+USE SpMedManha_;
+
+CREATE DATABASE SpMedGroup_MANHA;
+USE SpMedGroup_MANHA;
+
+CREATE TABLE Especialidades (
+	 ID_Especialidade INT IDENTITY PRIMARY KEY
+	 ,Nome_Especialidade VARCHAR (255) NOT NULL
+);
+CREATE TABLE TipoUsuario (
+	ID_TipoUsuario INT IDENTITY PRIMARY KEY
+	,TituloTipoUsuario VARCHAR (255) NOT NULL
+);
+CREATE TABLE Situacao (
+	ID_Situacao INT IDENTITY PRIMARY KEY
+	,Titulo_Situacao VARCHAR (255) NOT NULL
+);
+CREATE TABLE Endereco (
+	ID_Endereco INT IDENTITY PRIMARY KEY
+	,Estado VARCHAR (255) NOT NULL
+	,Numero CHAR (12) NOT NULL
+	,Rua VARCHAR (255) NOT NULL
+	,Cidade VARCHAR (255) NOT NULL
+	,CEP CHAR (12) NOT NULL
+);
+CREATE TABLE Usuario (
+	ID_Usuario INT IDENTITY PRIMARY KEY
+	,Email VARCHAR (255) NOT NULL UNIQUE 
+	,Senha VARCHAR (255) NOT NULL
+	,ID_TipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario (ID_TipoUsuario)
+);
+CREATE TABLE Prontuario (
+	ID_Prontuario INT IDENTITY PRIMARY KEY
+	,Nome_Paciente VARCHAR (255)
+	,RG CHAR (10) UNIQUE NOT NULL
+	,CPF CHAR (12) UNIQUE NOT NULL
+	,DataNascimento DATETIME NOT NULL
+	,Telefone CHAR(10) NOT NULL
+);
+CREATE TABLE Clinica (
+	ID_Clinica INT IDENTITY PRIMARY KEY 
+	,CNPJ CHAR (14) UNIQUE NOT NULL
+	,Horario VARCHAR (255) NOT NULL
+	,Razao_Social VARCHAR (255) NOT NULL
+	,Nome_Fantasia VARCHAR (255) UNIQUE NOT NULL
+);
+CREATE TABLE Medicos (
+	ID_Medico INT IDENTITY PRIMARY KEY 
+	,Nome_Medico VARCHAR (255) NOT NULL
+	,CRM CHAR (8)
+	,ID_Especialidade INT FOREIGN KEY REFERENCES Especialidades (ID_Especialidade)
+	,ID_Usuario INT FOREIGN KEY REFERENCES Usuario (ID_Usuario)
+	,ID_Clinica INT FOREIGN KEY REFERENCES Clinica (ID_Clinica)	
+);
+CREATE TABLE Consulta (
+	ID_Consulta INT IDENTITY PRIMARY KEY 
+	,Horario_Consulta DATETIME
+	,Descricao VARCHAR (255)
+	,ID_Medico INT FOREIGN KEY REFERENCES Medicos (ID_Medico)
+	,ID_Prontuario INT FOREIGN KEY REFERENCES Prontuario (ID_Prontuario)
+	,ID_Situacao INT FOREIGN KEY REFERENCES Situacao (ID_Situacao)
+);
