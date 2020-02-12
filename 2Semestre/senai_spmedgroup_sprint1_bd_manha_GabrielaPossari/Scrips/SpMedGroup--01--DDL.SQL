@@ -1,16 +1,13 @@
-CREATE DATABASE SpMedManha_;
-USE SpMedManha_;
-
-CREATE DATABASE SpMedGroup_MANHA;
-USE SpMedGroup_MANHA;
+CREATE DATABASE Sp_MedGroup_Manha_;
+USE Sp_MedGroup_Manha_;
 
 CREATE TABLE Especialidades (
 	 ID_Especialidade INT IDENTITY PRIMARY KEY
-	 ,Nome_Especialidade VARCHAR (255) NOT NULL
+	 ,Nome_Especialidade VARCHAR (255) NOT NULL 
 );
 CREATE TABLE TipoUsuario (
 	ID_TipoUsuario INT IDENTITY PRIMARY KEY
-	,TituloTipoUsuario VARCHAR (255) NOT NULL
+	,TituloTipoUsuario VARCHAR (255) NOT NULL 
 );
 CREATE TABLE Situacao (
 	ID_Situacao INT IDENTITY PRIMARY KEY
@@ -37,6 +34,8 @@ CREATE TABLE Prontuario (
 	,CPF CHAR (12) UNIQUE NOT NULL
 	,DataNascimento DATETIME NOT NULL
 	,Telefone CHAR(10) NOT NULL
+	,ID_Endereco INT FOREIGN KEY REFERENCES Endereco (ID_Endereco)
+	,ID_Usuario INT FOREIGN KEY REFERENCES Usuario (ID_Usuario)
 );
 CREATE TABLE Clinica (
 	ID_Clinica INT IDENTITY PRIMARY KEY 
@@ -44,6 +43,7 @@ CREATE TABLE Clinica (
 	,Horario VARCHAR (255) NOT NULL
 	,Razao_Social VARCHAR (255) NOT NULL
 	,Nome_Fantasia VARCHAR (255) UNIQUE NOT NULL
+	,ID_Endereco INT FOREIGN KEY REFERENCES Endereco (ID_Endereco)
 );
 CREATE TABLE Medicos (
 	ID_Medico INT IDENTITY PRIMARY KEY 
