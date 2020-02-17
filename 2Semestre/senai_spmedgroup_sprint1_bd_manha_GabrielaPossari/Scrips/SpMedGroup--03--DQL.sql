@@ -1,7 +1,7 @@
 use Sp_MedGroup_Manha_;
 GO
 SELECT * FROM Medicos;
-G
+GO
 SELECT * FROM TipoUsuario;
 GO
 SELECT * FROM Prontuario;
@@ -34,3 +34,4 @@ FROM Medicos
 WHERE ID_Especialidade = 3;
 --Converte a DataNascimento e Idade
 select Nome_Paciente,RG,CPF,CONVERT (VARCHAR(10),DataNascimento, 110) as 'Data Nascimento',YEAR(GETDATE())-YEAR(DataNascimento)-IIF(MONTH(GETDATE())*32+DAY(GETDATE())<MONTH(DataNascimento)*32+DAY(dataNascimento),1,0) AS IDADE,Telefone,ID_Endereco,ID_Usuario from Prontuario
+
