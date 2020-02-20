@@ -53,7 +53,7 @@ namespace senai.Filmes.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            // Cria um objeto generoBuscado que irá receber o gênero buscado no banco de dados
+            // Cria um objeto generoBuscado que irá receber o filme buscado no banco de dados
             FilmeDomain filmeBuscado = _filmesRepository.BuscarPorId(id);
 
             // Verifica se nenhum gênero foi encontrado
@@ -63,16 +63,16 @@ namespace senai.Filmes.WebApi.Controllers
                 return NotFound("Nenhum filme encontrado");
             }
 
-            // Caso seja encontrado, retorna o gênero buscado
+            // Caso seja encontrado, retorna o filme buscado
             return Ok(filmeBuscado);
         }
         [HttpPut]
         public IActionResult PutIdCorpo(FilmeDomain filmeAtualizado)
         {
-            // Cria um objeto generoBuscado que irá receber o gênero buscado no banco de dados
+            // Cria um objeto filmeBuscado que irá receber o filme buscado no banco de dados
             FilmeDomain filmeBuscado = _filmesRepository.BuscarPorId(filmeAtualizado.IdFilme);
 
-            // Verifica se algum gênero foi encontrado
+            // Verifica se algum filme foi encontrado
             if (filmeBuscado != null)
             {
                 // Tenta atualizar o registro
@@ -111,7 +111,7 @@ namespace senai.Filmes.WebApi.Controllers
             _filmesRepository.Deletar(id);
 
             // Retorna um status code com uma mensagem personalizada
-            return Ok("Gênero deletado");
+            return Ok("Filme deletado");
         }
         [HttpPut("{id}")]
         public IActionResult PutIdUrl(int id, FilmeDomain filmeAtualizado)
@@ -128,12 +128,11 @@ namespace senai.Filmes.WebApi.Controllers
                     (
                         new
                         {
-                            mensagem = "Gênero não encontrado",
+                            mensagem = "Filme não encontrado",
                             erro = true
                         }
                     );
             }
-
             // Tenta atualizar o registro
             try
             {

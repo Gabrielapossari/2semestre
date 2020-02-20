@@ -12568,11 +12568,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\49541849830\\Documents\\SENAI 2020\\2Semestre\\sprint2-backend-master\\manha\\exemplo_filmes\\senai.Filmes.WebApi\\senai.Filmes.WebApi\\senai.Filmes.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\49541849830\\Documents\\SENAI 2020\\2Semestre\\sprint2-backend\\manha\\exemplo_filmes\\senai.Filmes.WebApi\\senai.Filmes.WebApi\\senai.Filmes.WebApi.csproj",
       "projectName": "senai.Filmes.WebApi",
-      "projectPath": "C:\\Users\\49541849830\\Documents\\SENAI 2020\\2Semestre\\sprint2-backend-master\\manha\\exemplo_filmes\\senai.Filmes.WebApi\\senai.Filmes.WebApi\\senai.Filmes.WebApi.csproj",
+      "projectPath": "C:\\Users\\49541849830\\Documents\\SENAI 2020\\2Semestre\\sprint2-backend\\manha\\exemplo_filmes\\senai.Filmes.WebApi\\senai.Filmes.WebApi\\senai.Filmes.WebApi.csproj",
       "packagesPath": "C:\\Users\\49541849830\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\49541849830\\Documents\\SENAI 2020\\2Semestre\\sprint2-backend-master\\manha\\exemplo_filmes\\senai.Filmes.WebApi\\senai.Filmes.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\49541849830\\Documents\\SENAI 2020\\2Semestre\\sprint2-backend\\manha\\exemplo_filmes\\senai.Filmes.WebApi\\senai.Filmes.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
