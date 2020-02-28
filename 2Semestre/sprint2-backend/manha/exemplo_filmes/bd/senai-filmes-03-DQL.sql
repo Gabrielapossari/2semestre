@@ -1,15 +1,18 @@
+-- Define o banco de dados que será utilizado
 USE Filmes_manha;
 GO
 
+-- Lista todos os gêneros
 SELECT * FROM Generos;
+
+-- Lista todos os filmes
 SELECT * FROM Filmes;
 
+-- Lista todos os gêneros definindo as colunas exibidas
 SELECT IdGenero, Nome from Generos;
 
+-- Lista todos os usuários
+SELECT * FROM Usuarios
 
-UPDATE Filmes SET Titulo = 'teste', IdGenero = 1 WHERE IdFilme= 1
-
-UPDATE Filmes SET Titulo = 'teste atualizar',IdGenero = 2 WHERE IdFilme= 3
-
-SELECT  IdFilme,Titulo,Filmes.IdGenero,Generos.Nome  FROM Filmes
-INNER JOIN Generos ON Generos.IdGenero = Filmes.IdFilme
+-- Busca um usuário através do email e da senha
+SELECT IdUsuario, Email, Senha, Permissao FROM Usuarios WHERE Email = 'saulo@email.com' AND Senha = '123';
